@@ -18,7 +18,7 @@ a {
 
 #cam {
   float: right;
-  margin: 0 0 10px 20px;
+  margin: 0 0 10px 40px;
 }
 </style>
 </head>
@@ -31,6 +31,12 @@ _gaq.push(['_trackPageview']);
   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 })();
+
+document.onmousemove = function (e) {
+  var y = e.pageY;
+  var cam = document.getElementById('cam');
+  cam.style.webkitTransform = 'rotateZ(' + y + 'deg)';
+}
 </script>
 <body>
 <div id="wrapper">
