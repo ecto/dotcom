@@ -1,7 +1,50 @@
----
-layout: default
----
-<div id="banner">
+<!--
+      .-.
+      \  \
+       \  \     `
+        \  \     ).  c
+         \  \     _  /
+          \  \ //  _\\__
+           \  \/\`\ ++ /|
+            \//  \ \__/ |
+           o/)    \_____)
+           /=\.   .~~~~~|
+          // \\   |_____|
+         //   \\  | | | |
+        //     \\ | | | |
+       //      .\\( | ( |
+      //         \\ | | |
+     //          .\\| | |
+    //           _|\\_| |
+   //           (___\\__)
+ .//                 \\
+
+I also like astronomy!
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Cam Pedersen
+</title>
+  <meta name="viewport" content="width=device-width">
+  <meta name="description" content="">
+  <link rel="canonical" href="http://campedersen.com/">
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="site-title" href="/">
+      <img id="logo" src="/images/ecto.png" width="48" />
+      <!--Cam Pedersen-->
+    </a>
+  </div>
+</header>
+<div class="page-content">
+  <div class="wrap">
+    <div id="banner">
   <p>Hey, I'm Cam! I'm just another <a href="http://en.wikipedia.org/wiki/Human">human</a>.</p>
   <p>I like to build Internet things! I particularly like JavaScript.</p>
   <p>I spend my days working at <a href="https://imgur.com/">Imgur</a> and my nights <a href="http://github.com/ecto">hacking on code</a>.</p>
@@ -11,10 +54,28 @@ layout: default
   <p>SOMETIMES I TYPE IN ALL CAPS.</p>
 </div>
 <div class="home">
-  <ul class="posts">{% for post in site.posts %}
+  <ul class="posts">
     <li>
-      <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
-      <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-    </li>{% endfor %}
+      <span class="post-date">Mar 1, 2015</span>
+      <a class="post-link" href="/2015/03/01/adventures/">Adventures</a>
+    </li>
   </ul>
 </div>
+
+  </div>
+</div>
+</body>
+<script type="text/javascript">
+  var _gauges = _gauges || [];
+  (function() {
+    var t   = document.createElement('script');
+    t.type  = 'text/javascript';
+    t.async = true;
+    t.id    = 'gauges-tracker';
+    t.setAttribute('data-site-id', '54b87364eddd5b524405f60a');
+    t.src = '//secure.gaug.es/track.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(t, s);
+  })();
+</script>
+</html>
