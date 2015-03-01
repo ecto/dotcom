@@ -1,0 +1,10 @@
+# Site settings
+title: Cam Pedersen
+email: cam@campedersen.com
+description: ""
+baseurl: ""
+url: "http://campedersen.com"
+
+# Build settings
+markdown: kramdown
+permalink: pretty
