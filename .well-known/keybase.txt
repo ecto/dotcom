@@ -1,0 +1,59 @@
+==================================================================
+https://keybase.io/ecto
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://campedersen.com
+  * I am ecto (https://keybase.io/ecto) on keybase.
+  * I have a public key with fingerprint 65F3 5074 7ADB 82B7 E698  6157 CAEB 0B1E A9B6 3D6F
+
+To claim this, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "fingerprint": "65f350747adb82b7e6986157caeb0b1ea9b63d6f",
+            "host": "keybase.io",
+            "key_id": "CAEB0B1EA9B63D6F",
+            "uid": "e574790e9882b4bad0545a513f1c4c00",
+            "username": "ecto"
+        },
+        "service": {
+            "hostname": "campedersen.com",
+            "protocol": "http:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1396545904,
+    "expire_in": 157680000,
+    "prev": "036f6e738d079723f46deee4e88300e37b8f228bf1f19318a029d6f8e058f9e9",
+    "seqno": 4,
+    "tag": "signature"
+}
+
+with the aforementioned key, yielding the PGP signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: GnuPG v1.4.13 (Darwin)
+
+owE1Uc1rFDEUHz9ZFakFwZuHCIIwLJnJTCaZdtFdt+LdQ73omsy8bFPdyXRmdrUs
+9axe9Cb6H3htwYNePAiC/glSZIsixYt48CJYk1JzCXm/r/fynp0+4rXmP/44df7V
+64459OndT+nd6Lwop0iafB2lU3QX9i+liyFUZaWLBqWIxorEOIkSkUsWygQoZzSI
+k0yAxDIAwSUlOVXIRyumdgprI0UNbW1szT4GOrfVq92lHu4FS13eo6RPr1lsvA9A
+bM05Bs6sfSRFjuMoFnFAVJBFGcaOWENViBE4dtYYtOEjW5noDFy/LvYAzcSohByq
+Gop2ZkZWWlamMZm5Z8GVpilTp23WS0e+D3JwYDOQusjt2FYwsWptCpQGlpk12vkG
+hFPbFMeRj+BBqSsYaMeIE8qwPS4GJtYSE6ooJITlOOFJSFREcwCIgDGCMZBEMhWG
+TKpABZwETOCQ279jgGOmOHDkBlsrDEptUiOG1rLWw0I04wrQxqPbR735lnf82GG3
+N+/kiTP/t/lty9u7fvHSV5/x3Qsv3/zt9j8/efrQ74vl3Q+/1mZn23fe//H2lnda
+m+cWn89tb/1evTL7/vjyl7nxLKo6mzcX3t6a7mz/Aw==
+=3CCt
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/ecto
+
+==================================================================
