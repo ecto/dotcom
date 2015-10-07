@@ -24,7 +24,6 @@ h1, h2, h3, h4, h5, h6 { font-size: 100%; font-weight: 400; }
 .wrap {
   max-width: 580px;
   padding: 15px 50px;
-  margin: 0 auto;
   zoom: 1;
 }
 
@@ -347,6 +346,7 @@ h1, h2, h3, h4, h5, h6 { font-size: 100%; font-weight: 400; }
     clear: both;
     width: auto;
     margin: 0 0 15px; }
+
 }
 
 @-webkit-keyframes boo {
