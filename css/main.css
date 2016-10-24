@@ -14,6 +14,7 @@ body {
   font-size: 14px;
   line-height: 1.5;
   font-weight: 300;
+  text-align: center;
 }
 
 h1, h2, h3, h4, h5, h6 { font-size: 100%; font-weight: 400; }
@@ -29,7 +30,7 @@ h1, h2, h3, h4, h5, h6 { font-size: 100%; font-weight: 400; }
 }
 
 .wrap img,
-.wrap iframe {
+.wrap iframe {bundle exec jekyll serve --watch 
   max-width: 100%;
 }
 
@@ -45,11 +46,14 @@ h1, h2, h3, h4, h5, h6 { font-size: 100%; font-weight: 400; }
 
 #logo {
   transform: translate3d(0, 0, 0);
+  border-radius: 50%;
 }
 
 #logo:hover {
+/*
   -webkit-animation: boo .5s infinite;
   animation: boo .5s infinite;
+*/
 }
 
 .site-header {
@@ -118,6 +122,11 @@ h1, h2, h3, h4, h5, h6 { font-size: 100%; font-weight: 400; }
 
 #banner p {
   padding: 3px 0;
+  text-align: center;
+}
+
+#banner a {
+  padding: 5px;
 }
 
 .page-content {
