@@ -31,7 +31,7 @@ h1, h2, h3, h4, h5, h6 { font-size: 100%; font-weight: 400; }
 }
 
 .wrap img,
-.wrap iframe {bundle exec jekyll serve --watch 
+.wrap iframe {
   max-width: 100%;
 }
 
@@ -189,22 +189,22 @@ h1, h2, h3, h4, h5, h6 { font-size: 100%; font-weight: 400; }
 .post-content h5,
 .post-content h6 {
   line-height: 1;
-  font-weight: 300;
+  font-weight: bold;
   margin: 40px 0 20px;
 }
 
 .post-content h2 {
-  font-size: 32px;
+  font-size: 18px;
   letter-spacing: -1.25px;
 }
 
 .post-content h3 {
-  font-size: 26px;
+  font-size: 16px;
   letter-spacing: -1px;
 }
 
 .post-content h4 {
-  font-size: 20px;
+  font-size: 14px;
   letter-spacing: -1px;
 }
 
@@ -346,10 +346,10 @@ h1, h2, h3, h4, h5, h6 { font-size: 100%; font-weight: 400; }
     margin: 0;
   }
 
-  .post-header h1 { font-size: 36px; }
-  .post-content h2 { font-size: 28px; }
-  .post-content h3 { font-size: 22px; }
-  .post-content h4 { font-size: 18px; }
+  .post-header h1 { font-size: 20px; }
+  .post-content h2 { font-size: 18px; }
+  .post-content h3 { font-size: 16px; }
+  .post-content h4 { font-size: 14px; }
   .post-content blockquote { padding-left: 10px; }
   .post-content ul,
   .post-content ol { padding-left: 10px; }
