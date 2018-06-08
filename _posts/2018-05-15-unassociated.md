@@ -81,14 +81,14 @@ User.join('left outer join posts on posts.user_id = users.id')
 but Rails 5 makes this a little cleaner, and quite readble in my opinion:
 
 ```ruby
-User.left_join(:posts)
+User.left_joins(:posts)
   .where(posts: {user_id: nil})
   .first
 ```
 
 Hopefully somebody will find this useful!
 
-In the future, I hope we could get a further shorthand to drop the `left_join` and `where`, maybe `without`, which could give us:
+In the future, I hope we could get a further shorthand to drop the `left_joins` and `where`, maybe `without`, which could give us:
 
 ```ruby
 User.without(:post).first
