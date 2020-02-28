@@ -25,9 +25,15 @@ body,
 .formkit-input,
 .formkit-submit > span {
   padding: 4px !important;
+  transition: none !important;
 }
 .formkit-submit {
   margin-bottom: 0 !important;
+  text-decoration: underline;
+}
+.formkit-submit:hover {
+  background: blue !important;
+  color: white !important;
 }
 
 pre,
@@ -46,7 +52,7 @@ code {
 }
 .wrap {
   max-width: 800px;
-  padding: 15px 50px;
+  padding: 32px 16px;
   margin: 0 auto;
   zoom: 1;
 }
@@ -78,7 +84,6 @@ code {
 }
 
 .site-header {
-  padding-top: 30px;
   text-align: center;
 }
 
@@ -126,12 +131,7 @@ footer {
 /* ----------------------------------------------------------*/
 
 #banner {
-  margin: 30px 0;
-  text-align: center;
-}
-
-#banner p {
-  padding: 3px 0;
+  margin-top: 32px;
   text-align: center;
 }
 
@@ -154,6 +154,7 @@ footer {
 .posts li {
   line-height: 40px;
   display: block;
+  text-align: left;
 }
 
 .posts .post-date {
@@ -174,13 +175,14 @@ footer {
 }
 
 .post-header h1 {
-  font-size: 1.5em;
+  font-size: 1.6em;
+  text-align: left;
 }
 
 .post-header .meta {
   float: right;
   color: #818181;
-  margin-left: 16px;
+  margin: 8px 0;
 }
 
 .post-content {
@@ -439,11 +441,16 @@ footer {
 /* ----------------------------------------------------------*/
 
 @media screen and (max-width: 800px) {
-  .wrap {
-    padding: 15px;
+  .posts li {
+    line-height: inherit;
+    margin-bottom: 16px;
   }
-
-  .site-nav {
+  .post-header .meta,
+  .posts .post-date {
+    float: none;
+    display: block;
+    margin: 0;
+    padding: 0;
   }
 
   .site-nav .menu-icon {
@@ -475,26 +482,6 @@ footer {
     text-align: right;
     padding: 5px 0 5px 10px;
     margin: 0;
-  }
-
-  .post-header h1 {
-    font-size: 20px;
-  }
-  .post-content h2 {
-    font-size: 18px;
-  }
-  .post-content h3 {
-    font-size: 16px;
-  }
-  .post-content h4 {
-    font-size: 14px;
-  }
-  .post-content blockquote {
-    padding-left: 10px;
-  }
-  .post-content ul,
-  .post-content ol {
-    padding-left: 10px;
   }
 }
 
