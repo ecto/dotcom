@@ -3,10 +3,14 @@ title: Cam Pedersen
 email: cam@campedersen.com
 description: ""
 baseurl: ""
-url: "http://campedersen.com"
+url: "https://campedersen.com"
 
 # Build settings
 #markdown: kramdown
 permalink: pretty
 
 exclude: ['config.ru', 'Gemfile', 'Gemfile.lock', 'vendor']
+
+plugins:
+  - jekyll-feed
+
