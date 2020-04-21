@@ -1,0 +1,19 @@
+{
+  "name": "dotcom",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:ecto/dotcom.git",
+  "author": "Cam Pedersen <cam@campedersen.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "parcel build _includes/2020-04-21-react-audio.js"
+  },
+  "dependencies": {
+    "@babel/preset-react": "^7.9.4",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.0"
+  }
+}

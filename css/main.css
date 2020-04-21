@@ -211,8 +211,9 @@ footer {
   margin-left: 30px;
 }
 .post code {
-  background: #eee;
-  border-radius: 5px;
+  background: lemonchiffon;
+  /* background: lightyellow; */
+  /* border-radius: 5px; */
 }
 .highlighter-rouge {
   padding: 2px 5px;
@@ -225,6 +226,7 @@ footer {
 
 .post pre code {
   background: none;
+  font-size: 0.9em;
 }
 
 /* terminal */

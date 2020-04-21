@@ -9,8 +9,7 @@ url: "https://campedersen.com"
 #markdown: kramdown
 permalink: pretty
 
-exclude: ['config.ru', 'Gemfile', 'Gemfile.lock', 'vendor']
+exclude: ["config.ru", "Gemfile", "Gemfile.lock", "vendor", "node_modules"]
 
 plugins:
   - jekyll-feed
-
