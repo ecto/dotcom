@@ -83,7 +83,7 @@ const Playlist = () => {
           key={bleat.id}
           name={bleat.name}
           isPlaying={isPlaying && currentIndex === i}
-          play={() => play(i)}
+          play={() => (isPlaying ? audio.pause() : play(i))}
         />
       ))}
     </div>

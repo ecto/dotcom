@@ -24,19 +24,19 @@ When [inverting control](https://en.wikipedia.org/wiki/Inversion_of_control) of 
 
 ## Sharing the audio
 
-We start by defining a `context`, and initializing it with `null`. We do this so consumers of the context know if it's been initialized or not.
-
-```jsx
-const AudioContext = React.createContext(null);
-```
-
 We want to share an `Audio` instance. We could also put it into a `ref` to defer its instantiation to the component's lifecycle, but this works for now.
 
 ```jsx
 const audio = new Audio();
 ```
 
-Now we want to define a provider component - this could just go straight into the app, but breaking the `Provider` out allows us to package this nicely into a file without exporting the `AudioContext` we created above.
+We start by defining a `context`, and initializing it with audio context. We could also with null so consumers of the context know if it's been initialized or not, but we have it so we might as well use it. The `null` pattern is also common if you are loading something asynchronously that you'll provide later.
+
+```jsx
+const AudioContext = React.createContext(audio);
+```
+
+Now we want to define a provider component - this could just go straight into the app, but breaking the `Provider` out allows us to package this nicely into a file without exporting the `AudioContext` we created above. Passing the `audio` to the Provider here allows changes to propogate down, if it was for example a return value of `useRef` or `useState` instead of just the constant above.
 
 ```jsx
 export const AudioProvider = ({ children }) => (
@@ -105,13 +105,10 @@ const maybeAdvancePlaylist = React.useCallback(() => {
 }, [currentIndex, isPlayingAll]);
 
 React.useEffect(() => {
-  audio.addEventListener("play", () => setIsPlaying(true));
-  audio.addEventListener("pause", () => setIsPlaying(false));
   audio.addEventListener("ended", maybeAdvancePlaylist);
 
-  // when unmounting, clean up the event listeners we've added
+  // when unmounting, clean up the event listener we've added
   return () => {
-    // TODO remove other listeners
     audio.removeEventListener("ended", maybeAdvancePlaylist);
   };
 }, [audio, maybeAdvancePlaylist]);
