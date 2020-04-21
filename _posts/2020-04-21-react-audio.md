@@ -22,6 +22,45 @@ None of this is really necessary, especially just to share an Audio instance. Al
 
 When [inverting control](https://en.wikipedia.org/wiki/Inversion_of_control) of the Audio, this takes the form of putting the shared `Audio` component toward the top of the tree rather than the bottom, where each Bleat had its own Audio instance. We could pass the instance down through [props](https://reactjs.org/docs/components-and-props.html) but that could end up really messy, because the components which use it might be in arbitary positions in the component tree. The solution here is [context](https://reactjs.org/docs/context.html), the same mechanism react-redux uses to share Redux's store down to `connect`.
 
+## Visualizing the options
+
+We can use a simplified component hierarchy to show the differences between the context and props approaches.
+
+Before our changes:
+
+```xml
+<Playlist>
+  <Bleat>
+    <Audio />
+  </Bleat>
+  <Bleat>
+    <Audio />
+  </Bleat>
+</Playlist>
+```
+
+Using props to invert control of the audio:
+
+```xml
+<Audio>
+  <Playlist audio={audio}>
+    <Bleat audio={audio} />
+    <Bleat audio={audio} />
+  </Playlist>
+</Audio>
+```
+
+Using context to pass the audio down without threading props:
+
+```xml
+<AudioProvider>
+  <Playlist>
+    <Bleat />
+    <Bleat />
+  </Playlist>
+</Audio>
+```
+
 ## Sharing the audio
 
 We want to share an `Audio` instance. We could also put it into a `ref` to defer its instantiation to the component's lifecycle, but this works for now.
@@ -30,13 +69,15 @@ We want to share an `Audio` instance. We could also put it into a `ref` to defer
 const audio = new Audio();
 ```
 
-We start by defining a `context`, and initializing it with audio context. We could also with null so consumers of the context know if it's been initialized or not, but we have it so we might as well use it. The `null` pattern is also common if you are loading something asynchronously that you'll provide later.
+We start by defining a `context`, and initializing it with the Audio element we just created. We could also pass null `null` so consumers of the context know if it's been initialized or not, but we have it so we might as well use it. The `null` pattern is also common if you are loading something asynchronously that you'll provide later.
 
 ```jsx
 const AudioContext = React.createContext(audio);
 ```
 
-Now we want to define a provider component - this could just go straight into the app, but breaking the `Provider` out allows us to package this nicely into a file without exporting the `AudioContext` we created above. Passing the `audio` to the Provider here allows changes to propogate down, if it was for example a return value of `useRef` or `useState` instead of just the constant above.
+Now we want to define a provider component. Notice we're exporting this - `AudioContext.Provider` could just go straight into the app, but breaking it out allows us to package this nicely into a file without exporting the `AudioContext` we created above.
+
+It also allows you do define more complex hooks in your `Provider` and pass them down, but we don't need that here. Passing `audio` here could instead be a return value of `useRef` or `useState` rather than just the constant above.
 
 ```jsx
 export const AudioProvider = ({ children }) => (
@@ -85,7 +126,7 @@ const [currentIndex, setCurrentIndex] = React.useState(null);
 const [isPlayingAll, setIsPlayingAll] = React.useState(false);
 ```
 
-When the audio plays or pauses, let's store that state. When the clip ends, let's move to the next one. We create these event listeners inside a `useEffect` to allow cleanup when the component unmounts:
+When the clip ends, let's move to the next one. We create this event listener inside a `useEffect` to allow cleanup when the component unmounts:
 
 ```jsx
 const maybeAdvancePlaylist = React.useCallback(() => {
@@ -131,3 +172,7 @@ The context + hooks approach has several advantages:
 4. the changes to the codebase are obvious - `useAudio` can't be much clearer in my opinion
 
 But the best part is that it's **fun**! Hooks are super simple to write, refactor, and abstract. And in my opinion frontend work is fun because you get to interact with it - audio adds on top of the visual part of that!
+
+### Thanks
+
+Thanks to [Dave](https://davekiss.com/) and [Dylan](https://dylanjpierce.com/) for helping proof read this post (my first in a couple years!) and to [YKYZ](https://ykyz.com) for allowing me to write about this work.
